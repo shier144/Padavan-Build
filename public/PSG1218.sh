@@ -17,18 +17,18 @@ sed -i "s/192.168.1/$lan_ip/g" $default_path/defaults.h
 # sed -i 's/{ "wan_pppoe_passwd", "" }/{ "wan_pppoe_passwd", "宽带密码" }/g' $default_path/defaults.c
 
 # echo "设置为中继模式"
-# echo "#define BOARD_ROLE_REPEATER	1" >> ./configs/boards/PSG1218/board.h
+ echo "#define BOARD_ROLE_REPEATER	1" >> ./configs/boards/PSG1218/board.h
 
 # echo "打开2G无线桥接"
-# sed -i 's/{ "rt_mode_x", "0" }/{ "rt_mode_x", "4" }/g' $default_path/defaults.c
+ sed -i 's/{ "rt_mode_x", "0" }/{ "rt_mode_x", "4" }/g' $default_path/defaults.c
 
 # echo "打开5G无线桥接"
-# sed -i 's/{ "wl_mode_x", "0" }/{ "wl_mode_x", "4" }/g' $default_path/defaults.c
+ sed -i 's/{ "wl_mode_x", "0" }/{ "wl_mode_x", "4" }/g' $default_path/defaults.c
 
 # echo "超频到 600MHz "
-# sed -i '/CONFIG_FIRMWARE_CPU_600MHZ/d' $config
-# echo "CONFIG_FIRMWARE_CPU_600MHZ=y" >> $config
+ sed -i '/CONFIG_FIRMWARE_CPU_600MHZ/d' $config
+ echo "CONFIG_FIRMWARE_CPU_600MHZ=y" >> $config
 
 # echo "集成 KMS 激活服务器"
-# sed -i "s/CONFIG_FIRMWARE_INCLUDE_VLMCSD=n/CONFIG_FIRMWARE_INCLUDE_VLMCSD=y/g" $config
+ sed -i "s/CONFIG_FIRMWARE_INCLUDE_VLMCSD=n/CONFIG_FIRMWARE_INCLUDE_VLMCSD=y/g" $config
 
